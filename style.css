@@ -1,0 +1,280 @@
+body{
+    background: #111;
+    color: #fff;
+}
+p,h2{
+    padding: 0px;
+    margin: 0px;
+}
+.top-content{
+    padding: 20px 0px;
+}
+.top-content .logo img{
+    height: 60px;
+}
+.top-content .dash{
+    border-left: 0.04rem solid #333;
+    height: 100px;
+    margin-left: 1rem;
+}
+.top-content .user{
+    position: relative;
+}
+.top-content .user img{
+    width: 60px;
+    height: 60px;
+    border: 7px solid #E7020D;
+    position: absolute;
+    border-radius: 50px;
+    left: -50px;
+    top: -20px;
+}
+.top-content .user span{
+    background: #E7020D;
+    padding: 12px 10px; 
+    border-radius: 0px 5px 5px 0px;
+}
+.writing-section {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    padding: 20px 0px;
+}
+.writing-section .visit p{
+    font-size: 20px;
+}
+.writing-section .start-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E7020D;
+    color: #fff;
+    width: 100%;
+    border:none;
+    font-size: 20px;
+    padding: 12px 20px;
+    border-radius:5px;
+}
+.box-container{
+    display: grid;
+    grid-template-columns: 24% 24% 24% 24%;
+    justify-content: space-between;
+    padding: 20px 0px;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+.box-container .box{
+    text-align: center;
+    background: #E7020D;
+    color: #fff;
+    font-size: 20px;
+    padding: 20px 10px;
+    border-radius:5px;
+}
+.box h2{
+    font-weight: bold;
+    font-size: 28px;
+}
+.entries{
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #F4F4F4;
+    min-height: 180px;
+}
+.entries h2{
+    color: rgb(179, 177, 177);
+    font-size: 20px;
+    padding: 20px 0px;
+}
+.entries .entries-data{
+    background: #fff;
+    margin-bottom:3px; 
+    color: rgb(179, 177, 177);
+}
+.entries .entries-data p{
+    padding: 20px;
+    font-size: 24px;
+}
+/* popup design */
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgb(223, 223, 223);
+    color: #555;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+.popup-header{
+    padding: 10px 20px;
+    background: #fff;
+}
+.popup-header h2{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px 0px 0px 5px;
+}
+.overlay-content {
+    width: 100%;
+    padding: 10px 30px;
+}
+.overlay-content .label{
+    font-size: 18px;
+    padding: 10px 0px;
+    font-weight: normal;
+}
+.switchToggle input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    position: absolute;
+}
+.switchToggle label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 70px;
+    max-width: 70px;
+    height: 30px;
+    margin: 0px;
+    background: #a19e9e;
+    display: block;
+    border-radius: 100px;
+    position: relative; 
+}
+.switchToggle label:after {
+    content: ''; position: absolute; top: 2px; left: 2px; width: 26px; height: 26px; background: #fff; border-radius: 90px; transition: 0.3s; 
+}
+.switchToggle input:checked + label, .switchToggle input:checked + input + label  {
+    background: #3e98d3; 
+}
+.switchToggle input + label:before, .switchToggle input + input + label:before {
+    content: 'No'; position: absolute; top: 5px; left: 35px; width: 26px; height: 26px; border-radius: 90px; transition: 0.3s; text-indent: 0; color: #fff; 
+}
+.switchToggle input:checked + label:before, .switchToggle input:checked + input + label:before {
+    content: 'Yes'; position: absolute; top: 5px; left: 10px; width: 26px; height: 26px; border-radius: 90px; transition: 0.3s; text-indent: 0; color: #fff; 
+}
+.switchToggle input:checked + label:after, .switchToggle input:checked + input + label:after {
+    left: calc(100% - 2px); transform: translateX(-100%); 
+}
+.switchToggle label:active:after {
+    width: 60px; 
+} 
+.toggle-switchArea { 
+    margin: 10px 0 10px 0; 
+}
+.textarea {
+    width:100%;
+}
+.textarea:focus, .save-btn:focus{
+    outline: none;
+}
+.overlay a {
+    margin-top: 5px;
+    text-decoration: none;
+    /* font-size: 36px; */
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+.overlay .closebtn {
+    font-size: 30px;
+}
+.border-gray{
+    border: 1px solid #a19e9e;
+}
+.save-btn{
+    width: 100%;
+    height: 40px;
+    color: #a19e9e;
+    margin-top: 10px;
+}
+  
+@media screen and (max-width: 768px) {
+    .box{
+        font-size: 18px;
+        padding: 20px 0px;
+    }
+    .box h2{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .top-content {
+        padding: 15px 0px;
+    }
+    .top-content .dash{
+        height: 80px;
+    }
+    .top-content .user img{
+        width: 45px;
+        height: 45px;
+        border: 6px solid #E7020D;
+        left: -35px;
+        top: -10px;
+    }
+    .top-content .user span{
+        background: #E7020D;
+        padding: 10px; 
+        font-size: 15px;
+    }
+    .writing-section {
+        grid-template-columns: 100%;
+        text-align: center;
+        padding: 20px 0px;
+    }
+    .writing-section .start-btn {
+        margin-top: 10px;
+        width: 50%;
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+    .writing-section .visit p {
+        font-size: 18px;
+    }
+    .box-container{
+        display: block;
+    }
+    .box-container .box {
+        display: inline-block;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 375px) {
+    .top-content {
+        padding: 15px 0px;
+    }
+    .top-content .logo img{
+        height: 50px;
+    }
+    .top-content .dash{
+        border-left: 0.06rem solid #333;
+        margin-left: 0.7rem;
+    }
+    .top-content .user span{
+        padding: 10px; 
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 325px) {
+    .top-content .logo img{
+        height: 45px;
+    }
+    .top-content .dash{
+        height: 60px;
+    }
+    .top-content .user span{
+        font-size: 10px;
+    }
+    .writing-section .start-btn {
+        width: 70%;
+        font-size: 14px;
+    }
+    .writing-section .visit p {
+        font-size: 14px;
+    }
+}
+/* popup design */
