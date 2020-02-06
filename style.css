@@ -93,9 +93,10 @@ p,h2{
 .right-paddle {
 	right: 0;
 }
-.right-paddle i{
+.right-paddle i,.left-paddle i{
 	font-size: 26px;
 }
+
 .hidden {
 	display: none;
 }
