@@ -34,30 +34,115 @@
                 </button>
             </div>
         </div>
+
+        <!-- copy this =================================================== -->
         <div class="box-container">
-            <div class="box">
-                <p>G SCORE</p>
-                <h2>4</h2>
+            <div class="boxes">
+                <div class="box">
+                    <p>G SCORE</p>
+                    <h2>4</h2>
+                </div>
+                <div class="box">
+                    <p>TODAY</p>
+                    <h2>+0</h2>
+                </div>
+            
+                <div class="box">
+                    <p>JOINED</p>
+                    <h2>20 days ago</h2>
+                </div>
+            
+                <div class="box">
+                    <p>STREAK</p>
+                    <h2>0 days</h2>
+                </div>
             </div>
-        
-            <div class="box">
-                <p>TODAY</p>
-                <h2>+0</h2>
-            </div>
-        
-            <div class="box">
-                <p>JOINED</p>
-                <h2>20 days ago</h2>
-            </div>
-        
-            <div class="box">
-                <p>STREAK</p>
-                <h2>0 days</h2>
+
+            <div class="paddles hidden">
+                <div class="right-paddle paddle">
+                    <i class="fas fa-caret-right ml-2"></i>
+                </div>
             </div>
         </div>
-                
+        <!-- from there ====================================================== -->
 
         <div class="entries">
+            <!-- badges code start from here ===============================================-->
+            <h2>Badges <span>(5)</span></h2>
+            <div class="row">
+                <div class="badge" onclick="openBadgeSlider()">
+                    <img src="./1st.png" alt="">
+                    <h2>One</h2>
+                </div>
+                <div class="badge" onclick="openBadgeSlider()">
+                    <img src="./Ruler.png" alt="">
+                    <h2>Ruler</h2>
+                </div>
+                <div class="badge" onclick="openBadgeSlider()">
+                    <img src="./Art.png" alt="">
+                    <h2>Art</h2>
+                </div>
+                <div class="badge" onclick="openBadgeSlider()">
+                    <img src="./Awards.png" alt="">
+                    <h2>Award</h2>
+                </div>
+             
+                <div class="badge" onclick="openBadgeSlider()">
+                    <img src="./Brush.png" alt="">
+                    <h2>Brush</h2>
+                </div>
+                <div class="badge" onclick="openBadgeSlider()">
+                    <img src="./Dart.png" alt="">
+                    <h2>Dart</h2>
+                </div>
+                <div class="badge" onclick="openBadgeSlider()">
+                    <img src="./Paper.png" alt="">
+                    <h2>Paper</h2>
+                </div>
+                <div class="badge" onclick="openBadgeSlider()">
+                    <img src="./Pencil.png" alt="">
+                    <h2>Pencil</h2>
+                </div>
+                <div class="badge" onclick="openBadgeSlider()">
+                    <img src="./Pin.png" alt="">
+                    <h2>Pin</h2>
+                </div>
+                <div class="badge" onclick="openBadgeSlider()">
+                    <img src="./PostIt.png" alt="">
+                    <h2>PostIt</h2>
+                </div>
+                <div class="badge" onclick="openBadgeSlider()">
+                    <img src="./Scissors.png" alt="">
+                    <h2>Scissor</h2>
+                </div>
+                <div class="badge" onclick="openBadgeSlider()">
+                    <img src="./Bookmark.png" alt="">
+                    <h2>Bookmark</h2>
+                </div>
+                <div class="badge" onclick="openBadgeSlider()">
+                    <img src="./Calculator.png" alt="">
+                    <h2>Calculator</h2>
+                </div>
+                <div class="badge" onclick="openBadgeSlider()">
+                    <img src="./BullsEye.png" alt="">
+                    <h2>Bulls Eye</h2>
+                </div>
+                <div class="badge" onclick="openBadgeSlider()">
+                    <img src="./GraduationCap.png" alt="">
+                    <h2>Graduation</h2>
+                </div>
+                <div class="badge" onclick="openBadgeSlider()">
+                    <img src="./Highlighter.png" alt="">
+                    <h2>Highlighter</h2>
+                </div>
+               
+                <div class="badge" onclick="openBadgeSlider()">
+                    <img src="./PaperClip.png" alt="">
+                    <h2>Paper Clip</h2>
+                </div>
+            </div>
+            <!-- badges code ends here ==================================================== -->
+            
             <h2>Pst Entries <span>(1):</span></h2>
             <div class="entries-data">
                 <p>Today: <span>Monday, Feb 3rd</span></p>
@@ -83,7 +168,6 @@
         </div>
     </div>
 
-    <!-- right slider code -->
     <div id="custom-popup" class="overlay">
         <div class="d-flex justify-content-between align-items-center popup-header">
             <div class="d-flex justify-content-center align-items-center">
@@ -134,7 +218,25 @@
     
         </div>
     </div>
-    <!-- right slider code -->
+
+    <!-- badges slider code start form here =========================================-->
+    <div id="badge-slider" class="overlay">
+        <div class="d-flex justify-content-between align-items-center popup-header">
+            <div class="d-flex justify-content-center align-items-center">
+                <i class="far fa-edit" style="font-size: 20px"></i>
+                <h2>Badge Name</h2>
+            </div>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeBadgeSlider()">&times;</a>
+        </div>
+        
+        <div class="overlay-content">
+            <div class="text-center mt-2">
+                <img src="./1st.png" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sequi rerum, laboriosam deserunt obcaecati cum consequuntur nesciunt ea fugiat blanditiis! Ab id reiciendis tempora optio sed minima ad, repellendus assumenda. </p>
+            </div>
+        </div>
+    </div>
+    <!-- badges slider code start form here ============================================-->
 
     <script>
         function openNav() {
@@ -144,6 +246,17 @@
         function closeNav() {
             document.getElementById("custom-popup").style.width = "0%";
         }
+
+        // for bage slider ===================================================
+        function openBadgeSlider() {
+            document.getElementById("badge-slider").style.width = "100%";
+        }
+        
+        function closeBadgeSlider() {
+            document.getElementById("badge-slider").style.width = "0%";
+        }
+        // for bage slider====================================================
+
     </script>
 </body>
 </html>

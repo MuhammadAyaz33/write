@@ -56,15 +56,23 @@ p,h2{
     padding: 12px 20px;
     border-radius:5px;
 }
+/* new code copy from below ================================== */
 .box-container{
+    position: relative; 
+    padding: 20px 0px;
+    overflow-x: hidden;
+	overflow-y: hidden;
+}
+.box-container .boxes{
     display: grid;
     grid-template-columns: 24% 24% 24% 24%;
     justify-content: space-between;
-    padding: 20px 0px;
-    overflow-y: hidden;
-    white-space: nowrap;
+    box-sizing: border-box;
+	white-space: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
 }
-.box-container .box{
+.box-container .boxes .box{ /*including this line================================*/
     text-align: center;
     background: #E7020D;
     color: #fff;
@@ -76,6 +84,23 @@ p,h2{
     font-weight: bold;
     font-size: 28px;
 }
+/* copy this new code=========================================== */
+.paddle {
+	position: absolute;
+    top: 50px;
+    margin-right: 10px;
+}
+.right-paddle {
+	right: 0;
+}
+.right-paddle i{
+	font-size: 26px;
+}
+.hidden {
+	display: none;
+}
+/* copy this new code=========================================== */
+
 .entries{
     padding: 20px;
     margin-bottom: 20px;
@@ -96,7 +121,7 @@ p,h2{
     padding: 20px;
     font-size: 24px;
 }
-/* popup design */
+
 .overlay {
     height: 100%;
     width: 0;
@@ -121,6 +146,11 @@ p,h2{
 .overlay-content {
     width: 100%;
     padding: 10px 30px;
+}
+.overlay-content img{
+    width: 150px;
+    height: 150px;
+    padding: 20px
 }
 .overlay-content .label{
     font-size: 18px;
@@ -175,7 +205,6 @@ p,h2{
 .overlay a {
     margin-top: 5px;
     text-decoration: none;
-    /* font-size: 36px; */
     color: #818181;
     display: block;
     transition: 0.3s;
@@ -192,7 +221,22 @@ p,h2{
     color: #a19e9e;
     margin-top: 10px;
 }
-  
+
+/* code for badges  =========================================== */
+.badge{
+    text-align: center;
+}
+.badge img{
+    width: 80px;
+    height: 80px;
+}
+.badge h2{
+    font-size: 18px;
+    padding: 5px 0px;
+}
+/* code for badges   ==============================================*/
+
+
 @media screen and (max-width: 768px) {
     .box{
         font-size: 18px;
@@ -203,6 +247,12 @@ p,h2{
     }
 }
 @media screen and (max-width: 425px) {
+    /* copy thius ==========================================*/
+    .hidden {
+        display: block;
+    }
+    /* copy thius ==========================================*/
+
     .top-content {
         padding: 15px 0px;
     }
@@ -235,13 +285,23 @@ p,h2{
     .writing-section .visit p {
         font-size: 18px;
     }
-    .box-container{
+    .box-container .boxes{
         display: block;
     }
-    .box-container .box {
+    .box-container .boxes .box {
         display: inline-block;
         width: 100%;
+        padding: 15px 10px;
     }
+    /* code for badges   ============================================*/
+    .badge img{
+        width: 40px;
+        height: 40px;
+    }
+    .badge h2{
+        font-size: 14px;
+    }
+    /* code for badges  ============================================== */
 }
 @media screen and (max-width: 375px) {
     .top-content {
@@ -277,4 +337,3 @@ p,h2{
         font-size: 14px;
     }
 }
-/* popup design */
