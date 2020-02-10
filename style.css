@@ -338,3 +338,10 @@ p,h2{
         font-size: 14px;
     }
 }
+
+
+
+
+    .introjs-prevbutton {
+        display: none;
+    }
