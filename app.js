@@ -1,42 +1,44 @@
+
 var app = angular.module('myApp', ['angular-intro']);
 
 app.controller('myCtrl', function ($scope,ngIntroService)  {
 
-    $scope.IntroOptions = {
-        steps:[
-        {
-            element: document.querySelector('#step1'),
-            intro: '<p style="color:#000">This is the first tooltip.</p>'
-        },
-        {
-            element: document.querySelectorAll('#step2')[0],
-            intro: '<p style="color:#000">This is the seconf tooltip.</p>',
-            position: 'right'
-        },
-        {
-            element: '#step3',
-            intro: '<p style="color:#000">This is the third tooltip.</p>',
-            position: 'left'
-        },
-        {
-            element: '#step4',
-            intro: '<p style="color:#000">This is the fourth tooltip.</p>',
-            position: 'bottom'
-        },
-        {
-            element: '#step5',
-            intro: 'Get it, use it.'
-        }
-        ],
-        showStepNumbers: false,
-        showBullets: false,
-        exitOnOverlayClick: true,
-        exitOnEsc:true,
-        nextLabel: '<span style="color:#000">Next</span>',
-        prevLabel: '',
-        skipLabel: '<span style="color:#000">exit</span>',
-        doneLabel: '<span style="color:#000">Thanks</span>'
-    };
+  $scope.IntroOptions = {
+    steps:[
+      {
+        element: document.querySelector('#step1'),
+        intro: "<span style='color:#000'>Sample text 1<span>"
+      },
+      {
+        element: document.querySelectorAll('#step2')[0],
+        intro: "<span style='color:#000'>Sample text 2<span>",
+      },
+      {
+        element: '#step3',
+        intro: "<span style='color:#000'>Sample text 3<span>",
+      },
+      {
+        element: '#step4',
+        intro: "<span style='color:#000'>Sample text 4<span>",
+      },
+      {
+        element: '#step5',
+        intro: "<span style='color:#000'>Sample text 5<span>",
+      },
+      {
+        element: '#step6',
+        intro: "<span style='color:#000'>Thank you for taking step guide.<span>",
+      }
+    ],
+    showStepNumbers: false,
+    showBullets: false,
+    exitOnOverlayClick: true,
+    exitOnEsc:true,
+    nextLabel: '<span style="color:#000">Next</span>',
+    prevLabel: '<span style="color:#000">Previous</span>',
+    skipLabel: '<span style="color:#000">Exit</span>',
+    doneLabel: '<span style="color:#000">Thanks</span>'
+  };
 
   $scope.CompletedEvent = function(){
     console.log('[directive] completed Event')
@@ -48,9 +50,12 @@ app.controller('myCtrl', function ($scope,ngIntroService)  {
 	  console.log('[directive] change Event')
 	}
 	$scope.BeforeChangeEvent= function(){
-    console.log('this is it1')
-
-	  console.log('[directive] beforeChange Event')
+    if (ngIntroService.intro._currentStep == 1){
+      document.getElementById("custom-popup").style.width = "100%";
+    }
+    if (ngIntroService.intro._currentStep == 2){
+      document.getElementById("custom-popup").style.width = "0%";
+    }
 	}
   $scope.AfterChangeEvent= function(){
     console.log('[directive] after change Event')

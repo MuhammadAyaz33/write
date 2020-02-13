@@ -342,6 +342,8 @@ p,h2{
 
 
 
-    .introjs-prevbutton {
-        display: none;
-    }
+.introjs-prevbutton {
+    display: none;
+}
+.introjs-disabled{
+}
